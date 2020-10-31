@@ -13,7 +13,10 @@ import org.w3c.dom.Text
 class LearnedItemsAdapter: RecyclerView.Adapter<LearnedItemsAdapter.LearnedItemViewHolder>() {
 
     var data = listOf<ItemLearned>() //segura dados do banco
-
+        set(value){
+            field = value
+            notifyDataSetChanged()
+        }
 
     inner class LearnedItemViewHolder (itemView: View): RecyclerView.ViewHolder (itemView){
         val titleItem: TextView = itemView.findViewById(R.id.itemTitle)
