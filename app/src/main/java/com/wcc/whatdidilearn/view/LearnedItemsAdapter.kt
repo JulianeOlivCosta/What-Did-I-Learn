@@ -20,8 +20,8 @@ class LearnedItemsAdapter: RecyclerView.Adapter<LearnedItemsAdapter.LearnedItemV
         val levelItem: View = itemView.findViewById(R.id.itemLevel)
 
         fun bind(title: String, description:String, color: Int){
-            titleItem.text = title,
-            descriptionItem.text = description,
+            titleItem.text = title
+            descriptionItem.text = description
             levelItem.setBackgroundResource(color)
         }
     }
@@ -36,8 +36,10 @@ class LearnedItemsAdapter: RecyclerView.Adapter<LearnedItemsAdapter.LearnedItemV
         return data.size
     }
 
+    //conecta os dados com a viewHolder
     override fun onBindViewHolder(holder: LearnedItemViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val itemLearnedToShow: ItemLearned = data.get(position)
+        holder.bind(itemLearnedToShow.title, itemLearnedToShow.description, itemLearnedToShow.understandingLevel.color)
     }
 
 }
