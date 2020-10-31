@@ -1,7 +1,7 @@
 package com.wcc.whatdidilearn.entities
 
 enum class Level {
-    HIGHT,
+    HIGH,
     MEDIUM,
     LOW
 }
