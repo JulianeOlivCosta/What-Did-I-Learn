@@ -5,13 +5,15 @@ import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
 import com.wcc.whatdidilearn.R
 import com.wcc.whatdidilearn.data.DatabaseItems
+import com.wcc.whatdidilearn.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding = ActivityMainBinding.inflate(layoutInflater) //similar ao getInflate
+        setContentView(binding.root)
 
-        val recycleView = findViewById<RecyclerView>(R.id.items_recycle_views)
+        val recycleView = binding.itemsRecycleViews
         val adapter = LearnedItemsAdapter()
         recycleView.adapter = adapter
 
