@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         val adapter = LearnedItemsAdapter()
         recycleView.adapter = adapter
 
-        val learnedItemsList = DatabaseItems().getAll()
+        val learnedItemsList = DatabaseItems.getAll()
         adapter.data = learnedItemsList
     }
 }
