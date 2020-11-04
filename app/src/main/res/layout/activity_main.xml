@@ -7,13 +7,30 @@
     tools:context=".view.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        tools:listitem="@layout/item_learned"
         android:id="@+id/items_recycle_views"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/> //but I can create my own
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/item_learned" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/items_recycle_views"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/items_recycle_views"
+        app:layout_constraintVertical_bias="0.97"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    //but I can create my own
 </androidx.constraintlayout.widget.ConstraintLayout>
