@@ -4,15 +4,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.RecyclerView
 import com.wcc.whatdidilearn.R
-import com.wcc.whatdidilearn.entities.ItemLearned
-import org.w3c.dom.Text
+import com.wcc.whatdidilearn.entities.LearnedItem
 
 class LearnedItemsAdapter: RecyclerView.Adapter<LearnedItemsAdapter.LearnedItemViewHolder>() {
 
-    var data = listOf<ItemLearned>() //segura dados do banco
+    var data = listOf<LearnedItem>() //segura dados do banco
         set(value){
             field = value
             notifyDataSetChanged()
@@ -44,8 +42,8 @@ class LearnedItemsAdapter: RecyclerView.Adapter<LearnedItemsAdapter.LearnedItemV
 
     //conecta os dados com a viewHolder
     override fun onBindViewHolder(holder: LearnedItemViewHolder, position: Int) {
-        val itemLearnedToShow: ItemLearned = data.get(position)
-        holder.bind(itemLearnedToShow.title, itemLearnedToShow.description, itemLearnedToShow.understandingLevel.color)
+        val itemLearnedToShow: LearnedItem = data.get(position)
+        holder.bind(itemLearnedToShow.title, itemLearnedToShow.description, itemLearnedToShow.understanding_level.color)
     }
 
 }

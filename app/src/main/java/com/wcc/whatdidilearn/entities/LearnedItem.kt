@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "learned_item")
-data class ItemLearned (
+data class LearnedItem (
     @ColumnInfo(name = "item_title")
     val title: String,
 
