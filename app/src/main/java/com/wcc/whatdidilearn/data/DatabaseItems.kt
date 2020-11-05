@@ -23,7 +23,7 @@ abstract class DatabaseItems: RoomDatabase() {
         @Volatile
         private var INSTANCE: DatabaseItems? = null
 
-        fun getDatabase(context: Context): DatabaseItems {
+        fun getDatabase(context: Context, scope: CoroutineScope): DatabaseItems {
             // se INSTANCE não é nulo, então retorna ela mesma,
             // se INSTANCE é nula, então cria uma instancia do banco
             return INSTANCE ?: synchronized(this) {
@@ -31,7 +31,7 @@ abstract class DatabaseItems: RoomDatabase() {
                     context.applicationContext,
                     DatabaseItems::class.java,
                     "learned_item_database"
-                ).build()
+                ).addCallback(DataBaseCallBack(scope)).build()
                 INSTANCE = instance
                 instance
             }
