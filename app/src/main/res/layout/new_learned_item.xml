@@ -4,8 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewLearnedItem">
+    android:orientation="vertical"
+    tools:context=".view.NewLearnedItem"
+    android:padding="24dp">
+    <TextView
+        android:id="@+id/titleLabel"
+        android:text="Item Title:"
+        style="@style/LabelStyle" />
+    <EditText
+        android:id="@+id/titleEditText"
+        style="@style/EditTextStyle" />
+    <TextView
+        android:id="@+id/descriptionTitle"
+        style="@style/LabelStyle"
+        android:text="Item Description:" />
+    <EditText
+        android:id="@+id/descriptionEditText"
+        android:layout_height="100dp"
+        android:inputType="textMultiLine"
+        style="@style/EditTextStyle" />
 
-
-
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="@string/saveButton" />
 </LinearLayout>
