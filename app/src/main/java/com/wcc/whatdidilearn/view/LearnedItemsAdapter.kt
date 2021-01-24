@@ -16,12 +16,14 @@ class LearnedItemsAdapter: RecyclerView.Adapter<LearnedItemsAdapter.LearnedItemV
             notifyDataSetChanged()
         }
 
-    inner class LearnedItemViewHolder (itemView: View): RecyclerView.ViewHolder (itemView){
+    inner class LearnedItemViewHolder (itemView: View): RecyclerView.ViewHolder(itemView){
+        //cria uma variavel para cada item de tela.
+
         val titleItem: TextView = itemView.findViewById(R.id.itemTitle)
         val descriptionItem: TextView = itemView.findViewById(R.id.itemDescription)
         val levelItem: View = itemView.findViewById(R.id.itemLevel)
 
-        fun bind(title: String, description:String, color: Int){
+        fun bind(title: String, description: String, color: Int) {
             titleItem.text = title
             descriptionItem.text = description
             levelItem.setBackgroundResource(color)
