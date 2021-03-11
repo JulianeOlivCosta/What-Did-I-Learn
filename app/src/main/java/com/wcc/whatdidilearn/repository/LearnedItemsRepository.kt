@@ -1,14 +1,14 @@
 package com.wcc.whatdidilearn.repository
 
 import com.wcc.whatdidilearn.data.LearnedItemDao
-import com.wcc.whatdidilearn.entities.LearnedItem
+import com.wcc.whatdidilearn.entities.LearnedItemEntity
 
 class LearnedItemsRepository(private val dao: LearnedItemDao) {
 
     val learnedItems = dao.getAll()
 
-    suspend fun insertNewLearnedItem(item: LearnedItem){
-        dao.insert(item)
+    suspend fun insertNewLearnedItem(itemEntity: LearnedItemEntity) {
+        dao.insert(itemEntity)
     }
 
 }

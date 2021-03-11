@@ -28,14 +28,14 @@ class MainActivity : AppCompatActivity() {
         val repository = LearnedItemsRepository(dao)
         val viewModelFactory = LearnedItemViewModelFactory(repository)
         val viewModel = ViewModelProvider(this, viewModelFactory).get(LearnedItemViewModel::class.java)
-        val itemsList = viewModel.learnedItemsList
+        val itemsList = viewModel.learnedItemsListEntity
         itemsList.observe(this, Observer { items ->
             adapter.data = items
         })
 
         binding.addFab.setOnClickListener{
 
-        var intent = Intent(this, NewLearnedItem::class.java)
+            val intent = Intent(this, NewLearnedItem::class.java)
             startActivity(intent)
         }
 

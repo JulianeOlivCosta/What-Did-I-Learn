@@ -6,12 +6,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.wcc.whatdidilearn.R
-import com.wcc.whatdidilearn.entities.LearnedItem
+import com.wcc.whatdidilearn.entities.LearnedItemEntity
 
 class LearnedItemsAdapter: RecyclerView.Adapter<LearnedItemsAdapter.LearnedItemViewHolder>() {
 
-    var data = listOf<LearnedItem>() //segura dados do banco
-        set(value){
+    var data = listOf<LearnedItemEntity>() //segura dados do banco
+        set(value) {
             field = value
             notifyDataSetChanged()
         }
@@ -44,8 +44,8 @@ class LearnedItemsAdapter: RecyclerView.Adapter<LearnedItemsAdapter.LearnedItemV
 
     //conecta os dados com a viewHolder
     override fun onBindViewHolder(holder: LearnedItemViewHolder, position: Int) {
-        val itemLearnedToShow: LearnedItem = data.get(position)
-        holder.bind(itemLearnedToShow.title, itemLearnedToShow.description, itemLearnedToShow.understanding_level.color)
+        val itemLearnedToShowEntity: LearnedItemEntity = data.get(position)
+        holder.bind(itemLearnedToShowEntity.title, itemLearnedToShowEntity.description, itemLearnedToShowEntity.understanding_level.color)
     }
 
 }
